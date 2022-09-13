@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+}
+.App {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

@@ -1,0 +1,101 @@
+:root {
+  --text-color: #291507;
+}
+.Input {
+  width: 100%;
+  height: 100%;
+  max-width: 396px;
+  max-height: 70px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0px 26px;
+  position: relative;
+}
+.Input > input {
+  outline: none;
+  height: 70px;
+  border-radius: inherit;
+  flex: 1 1 auto;
+  border: none;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+}
+.Input > span {
+  color: var(--text-color);
+}
+.SearchResults {
+  position: absolute;
+  margin-top: 340px;
+  width: 100%;
+  height: 220px;
+  max-width: 396px;
+  max-height: 220px;
+  border-radius: 24px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 12px;
+  display: none;
+}
+
+.Search {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.Search > p {
+  color: black;
+  width: 100%;
+  height: 100%;
+  max-width: 360px;
+  min-height: 56px;
+  box-sizing: border-box;
+  padding: 12px 0px 12px 8px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.Search > p:hover {
+  background: rgba(151, 151, 151, 0.1);
+  border-radius: 12px;
+}
+/* .ShowResults {
+  display: block;
+} */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 24px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

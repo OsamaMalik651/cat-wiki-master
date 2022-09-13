@@ -1,10 +1,10 @@
 .DetailsPage {
   box-sizing: border-box;
-  padding: 0rem 2rem;
 }
 .DetailsPage__Top {
   display: flex;
   gap: 116px;
+  padding: 0rem 2rem;
 }
 .MainImage > img {
   flex: 1 1 auto;
@@ -48,4 +48,30 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+.DetailsPage__Bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: "Montserrat";
+}
+.DetailsPage__Bottom > h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #291507;
+}
+.Photos {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 44px;
+  row-gap: 46px;
+}
+.Photos > img {
+  flex: 1 1 auto;
+  max-width: 278px;
+  max-height: 278px;
+  background-color: tomato;
+  border-radius: 24px;
 }

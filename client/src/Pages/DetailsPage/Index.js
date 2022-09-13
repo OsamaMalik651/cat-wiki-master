@@ -27,7 +27,20 @@ const DetailsPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="DetailsPage__Bottom"></div>
+            <div className={styles.DetailsPage__Bottom}>
+                <h1>Other photos</h1>
+                <div className={styles.Photos}>
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+
+                </div>
+            </div>
 
         </div>
     )

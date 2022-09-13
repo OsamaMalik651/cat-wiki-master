@@ -4,7 +4,7 @@ const Input = () => {
     return (
         <div className={styles.Input}>
             <input type="text" placeholder='Enter your breed' />
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
                 search
             </span>
             <div className={`${styles.SearchResults}  ${styles.ShowResults}`}>

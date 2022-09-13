@@ -1,0 +1,16 @@
+.Footer {
+  background-color: black;
+  border-radius: 42px 42px 0 0;
+  height: 100%;
+  /* min-height: 108px; */
+  box-sizing: border-box;
+  padding-left: 108px;
+  padding-top: 38px;
+  padding-right: 38px;
+  padding-bottom: 40px;
+  margin-bottom: auto;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

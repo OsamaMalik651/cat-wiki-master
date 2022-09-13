@@ -1,15 +1,14 @@
 import styles from './App.module.css';
 import BlogSection from './components/BlogSection';
-import Footer from './components/Footer';
-import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import Layout from './Layout';
+import { Outlet, Link } from "react-router-dom";
 function App() {
   return (
     <div className={styles.App}>
-      <Header />
-      <HeroSection />
-      <BlogSection />
-      <Footer />
+      <Layout>
+        <Outlet />
+      </Layout>
     </div>
   );
 }

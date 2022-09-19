@@ -14,10 +14,4 @@ body {
 }
 .App {
   min-height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0px 96px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }

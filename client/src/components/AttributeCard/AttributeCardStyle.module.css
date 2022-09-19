@@ -1,0 +1,26 @@
+.AttributeCard {
+  font-family: "Montserrat";
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.AttributeCard > b {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+.Ratings {
+  display: flex;
+  gap: 8px;
+}
+.Bar {
+  border: none;
+  width: 60px;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  align-self: center;
+}
+.Filled {
+  background-color: #544439;
+}

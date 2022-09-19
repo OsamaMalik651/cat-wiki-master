@@ -10,6 +10,7 @@ import {
 import reportWebVitals from './reportWebVitals';
 import Home from './Pages/Home';
 import DetailsPage from './Pages/DetailsPage/Index';
+import TopBreeds from './Pages/TopBreeds';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
+          <Route path="top-10-searched-breeds" element={<TopBreeds />} />
           <Route path=":details" element={<DetailsPage />} />
         </Route>
       </Routes>

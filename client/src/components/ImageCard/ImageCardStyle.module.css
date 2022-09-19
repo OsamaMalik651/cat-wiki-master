@@ -15,7 +15,13 @@
   background-color: tomato;
   border-radius: 24px;
 }
-.ImageCard > p {
+.ImageCard > a {
+  text-decoration: none;
+}
+.ImageCard > a:visited {
+  color: #291507;
+}
+.ImageCard > a > p {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;

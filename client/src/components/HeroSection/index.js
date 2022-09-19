@@ -4,6 +4,7 @@ import AppLogo from "../../assets/CatwikiLogo.svg"
 import Input from '../Input/Index'
 import { MdArrowRightAlt } from 'react-icons/md';
 import ImageCard from '../ImageCard';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
     return (
@@ -15,7 +16,7 @@ const HeroSection = () => {
             </div>
             <div className={styles.HeroSectionBottom}>
                 <div className={styles.HSB__Top}>
-                    <p>Most Searched Breed</p>
+                    <Link to="/top-10-searched-breeds"><p>Most Searched Breed</p></Link>
                     <hr />
                 </div>
                 <div className={styles.HSB__Middle}>

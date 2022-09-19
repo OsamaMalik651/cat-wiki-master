@@ -56,11 +56,16 @@
   flex-direction: column;
   gap: 8px;
 }
-.HSB__Top > p {
+.HSB__Top > a {
+  text-decoration: none;
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
 }
+.HSB__Top > a:visited {
+  color: var(--text-color);
+}
+
 .HSB__Top > hr {
   width: 60px;
   border: 3px solid #4d270c;
@@ -97,5 +102,6 @@
 
 .HSB__Bottom {
   display: flex;
-  gap: 52px;
+  gap: 50px;
+  flex-wrap: wrap;
 }

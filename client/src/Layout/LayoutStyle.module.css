@@ -1,9 +1,16 @@
 .Layout {
   min-height: 100vh;
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
   padding: 0px 96px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  /* background-color: tomato; */
+  justify-content: space-between;
+}
+.Layout > :last-child {
+  margin-top: auto;
+  margin-bottom: 0;
 }

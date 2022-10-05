@@ -1,26 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './DetailPageStyle.module.css'
 import { cat } from "../../dummyCat"
 import AttributeCard from '../../components/AttributeCard'
-const DetailsPage = () => {
+import { useLocation, } from 'react-router-dom'
+import { getBreedDetails } from '../../services/breeds'
+const DetailsPage = (props) => {
+    const [breedDetails, setBreedDetails] = useState({});
+    const [catAttributes, setCatAttributes] = useState([]);
+    const [images, setImages] = useState([])
+    const [loading, setLoading] = useState(true)
     var keys = ["adaptability", "affection_level", "child_friendly", "grooming", "intelligence", "health_issues", "social_needs", "stranger_friendly"]
-    const catAttributes = Object.entries(cat).filter(([key, value]) => keys.includes(key))
-    console.log(catAttributes)
+
+    let { state } = useLocation();
+    useEffect(() => {
+        getBreedDetails(state.id).then((breedDetail) => {
+            setBreedDetails(breedDetail.data)
+            setImages(breedDetail.imageURLs)
+        })
+    }, []);
+
+    useEffect(() => {
+        if (Object.keys(breedDetails).length && images.length) {
+            let filteredCatAttributes = Object.entries(breedDetails).filter(([key, value]) => keys.includes(key))
+            setCatAttributes(filteredCatAttributes)
+            setLoading(false)
+        }
+    }, [breedDetails])
+
     return (
-        <div className={styles.DetailsPage}>
+        !loading && <div className={styles.DetailsPage}>
             <div className={styles.DetailsPage__Top}>
                 <div className={styles.Top__Left}>
                     <div className={styles.MainImage}>
-                        <img src="" alt="" />
+                        <img src={state.url} alt="" />
                     </div>
                 </div>
                 <div className={styles.Top__Right}>
                     <div className={styles.CatDetails}>
-                        <h1>Bengal</h1>
-                        <p>Bengals are a lot of fun to live with, but they're definitely not the cat for everyone, or for first-time cat owners. Extremely intelligent, curious and active, they demand a lot of interaction and woe betide the owner who doesn't provide it.</p>
-                        <p><b>Temperament:</b> Alert, Agile, Energetic, Demanding, Intelligent</p>
-                        <p><b>Origin:</b> United States</p>
-                        <p><b>Life Span:</b> 12 - 15 years</p>
+                        <h1>{breedDetails.name}</h1>
+                        <p>{breedDetails.description}</p>
+                        <p><b>Temperament:</b> {breedDetails.temperament}</p>
+                        <p><b>Origin:</b> {breedDetails.origin}</p>
+                        <p><b>Life Span:</b> {breedDetails.life_span} years</p>
                     </div>
                     <div className={styles.CatAttributes}>
                         {catAttributes.map((attribute, index) => <AttributeCard key={index} attribute={attribute} />)}
@@ -30,14 +51,7 @@ const DetailsPage = () => {
             <div className={styles.DetailsPage__Bottom}>
                 <h1>Other photos</h1>
                 <div className={styles.Photos}>
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
+                    {images?.slice(0, 8).map((image) => <img src={image.url} alt="" key={image.id} />)}
                 </div>
             </div>
 

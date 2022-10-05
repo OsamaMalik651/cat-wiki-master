@@ -1,24 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import styles from './HeroSectionStyle.module.css'
 import AppLogo from "../../assets/CatwikiLogo.svg"
 import Input from '../Input/Index'
 import { MdArrowRightAlt } from 'react-icons/md';
 import ImageCard from '../ImageCard';
 import { Link } from 'react-router-dom';
-
-import { getTopBreeds } from '../../services/breeds';
 import { CatContext } from '../../context/cat-context';
 
 const HeroSection = () => {
-    // const [topBreeds, setTopBreeds] = useState([]);
-
-    // useEffect(() => {
-    //     getTopBreeds().then((response) => {
-    //         setTopBreeds(response.slice(0, 4))
-    //     })
-
-    // }, [])
-    const { topBreeds, loading } = useContext(CatContext);
+    const { topBreeds } = useContext(CatContext);
     return (
         <div className={styles.HeroSection}>
             <div className={styles.HeroSectionTop}>

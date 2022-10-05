@@ -21,7 +21,7 @@ root.render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="top-10-searched-breeds" element={<TopBreeds />} />
-          <Route path=":details" element={<DetailsPage />} />
+          <Route path=":catName" element={<DetailsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

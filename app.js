@@ -9,6 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.get("/api/top-breeds", async (req, res) => {
     //Get breeds from API
     const response = await axios.get('https://api.thecatapi.com/v1/breeds', {
@@ -38,6 +39,30 @@ app.get("/api/top-breeds", async (req, res) => {
         return object;
     });
     res.send(filteredData)
+})
+
+app.get("/api/getBreedDetails", async (req, res) => {
+    const { id } = req.query;
+    const response = await axios.get(`https://api.thecatapi.com/v1/breeds/${id}`, {
+        headers: {
+            'x-api-key': process.env.API_KEY
+        },
+    }).then(response => {
+        return response.data;
+    }).catch(err => {
+        console.log(err);
+    });
+    const imageURLs = await axios.get(`https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${id}`, {
+        headers: {
+            'x-api-key': process.env.API_KEY
+        },
+    }).then(response => {
+        return response.data;
+    }).catch(err => {
+        console.log(err);
+    });
+    let catData = { data: response, imageURLs: imageURLs }
+    res.send(catData)
 })
 
 

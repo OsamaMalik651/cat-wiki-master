@@ -19,6 +19,7 @@
 }
 .ImageCard > a {
   text-decoration: none;
+  color: #291507;
 }
 .ImageCard > a:visited {
   color: #291507;

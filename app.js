@@ -1,7 +1,5 @@
 require('dotenv').config();
 const express = require("express");
-// const axios = require("axios")
-const axios = require("axios")
 const path = require('path');
 const bodyParser = require("body-parser");
 var cors = require('cors');
@@ -11,35 +9,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/", async (req, res) => {
-    //Get breeds from API
-    const response = await axios.get('https://api.thecatapi.com/v1/breeds', {
-        headers: {
-            'x-api-key': 'live_Dph3gqsx9iPBYrqUXeTuPwzmSXXp7Bb6Nkj0zssOUpCj8xALvyFKQNndeBRmpdem'
-        },
-    }).then(response => {
-        return response;
-    }).catch(err => {
-        console.log(err);
-    });
-
-    //Function to get randomly selected Cat Breeds
-    function getMultipleRandom(arr, num) {
-        const shuffled = [...arr].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, num);
-    }
-
-    const results = getMultipleRandom(response.data, 10);
-    //Filter the selected keys only
-    const filteredData = [...results].map((obj) => {
-        let object = Object.fromEntries(
-            Object.entries(obj).filter(
-                ([key]) => key.match("id") || key.match("name") || key.match("description") || key.match("image")
-            )
-        );
-        return object;
-    });
-    res.send(filteredData)
+app.get("/", (req, res) => {
+    res.send("Server connected")
 })
 
 //Set up port

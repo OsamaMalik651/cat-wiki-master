@@ -11,10 +11,11 @@ import reportWebVitals from './reportWebVitals';
 import Home from './Pages/Home';
 import DetailsPage from './Pages/DetailsPage/Index';
 import TopBreeds from './Pages/TopBreeds';
+import { CatContextProvider } from './context/cat-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <CatContextProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
@@ -24,7 +25,7 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </CatContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

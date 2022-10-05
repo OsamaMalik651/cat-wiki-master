@@ -5,12 +5,11 @@ const axios = require("axios")
 const path = require('path');
 const bodyParser = require("body-parser");
 var cors = require('cors');
-
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.get("/", async (req, res) => {
+app.get("/api/top-breeds", async (req, res) => {
     //Get breeds from API
     const response = await axios.get('https://api.thecatapi.com/v1/breeds', {
         headers: {

@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from "./CatInfoCard.module.css"
-const CatInfoCard = () => {
+const CatInfoCard = ({ breed, index }) => {
     return (
         <div className={styles.CatInfoCard}>
             <div className={styles.CardLeft}>
-                <img src="" alt="" />
+                <img src={breed?.image.url || ""} alt="" />
             </div>
             <div className={styles.CardRight}>
-                <h1>1. Bengal</h1>
-                <p>Bengals are a lot of fun to live with, but they're definitely not the cat for everyone, or for first-time cat owners. Extremely intelligent, curious and active, they demand a lot of interaction and woe betide the owner who doesn't provide it. </p>
+                <h1>{index + 1}. {breed?.name}</h1>
+                <p>{breed?.description}</p>
             </div>
         </div>
     )

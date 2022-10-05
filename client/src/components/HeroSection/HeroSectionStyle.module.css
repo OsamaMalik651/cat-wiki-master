@@ -56,7 +56,7 @@
   flex-direction: column;
   gap: 8px;
 }
-.HSB__Top > a {
+/* .HSB__Top > a {
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -64,7 +64,7 @@
 }
 .HSB__Top > a:visited {
   color: var(--text-color);
-}
+} */
 
 .HSB__Top > hr {
   width: 60px;
@@ -84,7 +84,7 @@
   max-width: 536px;
   line-height: 59px;
 }
-.HSB__Middle > p {
+.HSB__Middle > a > p {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -94,6 +94,15 @@
   font-size: 18px;
   line-height: 22px;
   color: rgba(41, 21, 7, 0.6);
+}
+.HSB__Middle > a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.HSB__Middle > a:visited {
+  color: var(--text-color);
 }
 .HSB__Middle > p > svg {
   font-size: 24px;

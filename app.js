@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require("express");
+const fs = require('fs');
 // const axios = require("axios")
 const axios = require("axios")
 const path = require('path');
@@ -64,7 +65,19 @@ app.get("/api/getBreedDetails", async (req, res) => {
     let catData = { data: response, imageURLs: imageURLs }
     res.send(catData)
 })
-
+app.get("/api/getAllBreeds", async (req, res) => {
+    let rawdata = fs.readFileSync('dummyBreedData.json')
+    let breeds = JSON.parse(rawdata)
+    const filteredData = [...breeds].map((obj) => {
+        let object = Object.fromEntries(
+            Object.entries(obj).filter(
+                ([key]) => key.includes("id") || key.match("name") || key.match("image")
+            )
+        );
+        return object;
+    });
+    res.send(filteredData)
+})
 
 //Set up port
 const port = process.env.PORT || 5000;

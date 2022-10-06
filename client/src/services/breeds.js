@@ -12,6 +12,10 @@ export const getBreedDetails = async (breedID) => {
             id: breedID
         }
     })
-    console.log(response)
+    return response.data
+}
+
+export const getAllBreeds = async () => {
+    const response = await axios.get("/api/getAllBreeds");
     return response.data
 }
